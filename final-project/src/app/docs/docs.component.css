@@ -1,0 +1,15 @@
+section {
+    margin-bottom: 50px
+}
+
+section h1 {
+    font-size: 24px;
+}
+
+section p {
+    margin: 10px 0 10px 10px;
+}
+
+section a {
+    text-decoration: none;
+}

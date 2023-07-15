@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <table class="table table-striped">
+    <thead></thead>
+    <tbody class="">
+      <tr [ngClass]="{'completed': task.isChecked}" >
+        <td class="align-middle">
+          <input 
+            class="form-check-input" 
+            type="checkbox" 
+            name="" 
+            id="check-donne" 
+            [checked]="task.isChecked"
+            (click)="onCheck()"
+            /></td>
+        <td class="align-middle">
+          <h5 class="text-muted">{{ task.content }}</h5>
+        </td>
+        <td class="align-middle">
+          <div class="d-flex justify-content-end">
+            <a style="cursor: pointer;" [routerLink]="[task.id, 'edit']"><i class="fa fa-pen-to-square text-primary m-1"></i></a>
+            <a (click)="onDelete(task.id)" style="cursor: pointer;"><i class="fa-regular fa-rectangle-xmark text-danger m-1"></i></a>
+            <i></i>
+          </div>
+            <div class="d-flex justify-content-end">
+              <span class="text-muted">{{ task.date }} </span>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+

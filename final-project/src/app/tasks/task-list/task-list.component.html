@@ -1,0 +1,46 @@
+<!-- Welcome message -->
+<div class="row">
+  <div class="welcome">
+    <h1>Plan your day</h1>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="input-group pull-left pad-left-right col-xs-5">
+          <input
+            class="form-control w-75 mb-2 mt-2"
+            type="text"
+            placeholder="Write task"
+            #searchBox
+            ngModel
+            name="userInput"
+          />
+        </div>
+        <button class="btn btn-success" type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <hr>
+    <div class="filter">
+      <button [ngClass]="filterState == 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'" (click)="updateFilter('all')">All</button>
+      <button [ngClass]="filterState == 'pending' ? 'btn btn-primary' : 'btn btn-outline-primary'" (click)="updateFilter('pending')">Pending</button>
+      <button [ngClass]="filterState == 'complete' ? 'btn btn-primary' : 'btn btn-outline-primary'" (click)="updateFilter('complete')">Complete</button>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="offset-1 col-10">
+          <app-task-item
+          *ngFor="let task of tasks | tasksFilter: filterState ; let i = index"
+          [task]="task"
+          [index]="i"
+        ></app-task-item>
+        </div>
+        <div class="col-4">
+          
+        </div>
+    </div>
+</div>
+
+  

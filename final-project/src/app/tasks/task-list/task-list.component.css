@@ -1,0 +1,15 @@
+.welcome {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.filter {
+    width: 91%;
+    display: flex;
+    justify-content: end;
+}
+
+.filter button {
+    margin-left: 20px;
+}
